@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom"
 
 const Login = () => {
+
+  const  handleLogIn = e =>{
+    e.preventDefault();
+   const email = e.target.email.value;
+   const password = e.target.password.value;
+   console.log(email, password)
+  }
   return (
     <>
-      <div className="mx-auto w-[620px] px-10 h-screen py-20 ">
-        <form className="card-body px-16 rounded-none border">
+      <div className="mx-auto md:w-1/2 px-10 h-screen py-20 ">
+        <form onSubmit={handleLogIn}  className="rounded-none">
 
           <h2 className="text-2xl font-semibold text-start my-6">Login Admin</h2>
 
@@ -26,9 +33,9 @@ const Login = () => {
             </label>
           </div>
 
-          <div className="flex justify-between ">
+          <div className="flex justify-between items-center ">
 
-            <div className="flex gap-2 text-black font-semibold">
+            <div className="flex gap-2 items-center text-white font-semibold">
               <input type="checkbox" name="check" id="" />
 
 
@@ -37,13 +44,13 @@ const Login = () => {
 
             </div>
 
-            <Link className="text-[#6B66F6] font-semibold">Forgot Password?</Link>
+            <Link className="text-[#6B66F6] md:text-sm text-xs font-semibold">Forgot Password?</Link>
           </div>
           <div className="form-control mt-6">
-            <button className="p-3 rounded bg-[#6B66F6] text-black font-semibold">Login</button>
+            <button className="md:p-3 p-1 lg:py-2 md:py-1 py-2 rounded bg-[#6B66F6] text-white font-semibold md:text-base text-sm">Login</button>
           </div>
 
-          <p className="my-4 font-semibold text-center">Dont Have An Account? <Link to='/register' className="text-[#6B66F6] ">Create an account</Link>
+          <p className="my-4 font-semibold text-center md:text-sm text-xs">Don't Have An Account? <Link to='/register' className="text-[#6B66F6] md:text-sm text-xs">Create an account</Link>
           </p>
 
 
