@@ -7,11 +7,17 @@ import Pricing from "../pages/dashbboard/pricing/Pricing";
 import SignUp from "../pages/signup/signup";
 import Tables from "../pages/table/Tables";
 import Tickets from "../pages/dashbboard/Tickets/Tickets";
+import Setting from "../pages/setting/Setting";
+import MainLayout from "../pages/form/MainLayout";
+import PrivateRoute from "../components/privateRoute/PrivateRoute";
+import ForgotPassword from "../pages/forgetPassword/ForgetPassword";
 
 export const route = createBrowserRouter([
     {
         path: "/",
         element: <Login />
+
+
     },
     {
         path: "/register",
@@ -19,16 +25,24 @@ export const route = createBrowserRouter([
 
     },
     {
+        path: '/forgot-password',
+        element: <ForgotPassword />
+    },
+    {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: (
+            <PrivateRoute>
+                <Dashboard />
+            </PrivateRoute>
+        ),
         children: [
             {
                 path: "/dashboard",
                 element: <Home />
             },
             {
-                path:"/dashboard/tickets",
-                element: <Tickets/>
+                path: "/dashboard/tickets",
+                element: <Tickets />
 
             },
             {
@@ -42,6 +56,14 @@ export const route = createBrowserRouter([
             {
                 path: "/dashboard/table",
                 element: <Tables />
+            },
+            {
+                path: "/dashboard/settings",
+                element: <Setting />
+            },
+            {
+                path: "/dashboard/form",
+                element: <MainLayout />
             }
 
         ]

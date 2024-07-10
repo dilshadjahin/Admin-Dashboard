@@ -7,12 +7,40 @@ import { LuShoppingCart } from "react-icons/lu";
 import { MdOutlineLogout, MdWidgets } from "react-icons/md";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { TiContacts, TiTicket } from "react-icons/ti";
+import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
 
 export const SidebarData = [
     {
         title: "Dashboard",
         path: "/dashboard",
         icon: <RiDashboardHorizontalFill />,
+    },
+    {
+        title: "Tickets",
+        path: "/dashboard/tickets",
+        icon: <TiTicket />,
+        cName: "nav-text",
+    },
+    {
+        title: "Chat",
+        path: "/dashboard/chat",
+        icon: <HiOutlineCurrencyDollar />,
+        cName: "nav-text",
+    },
+    {
+        title: "Form",
+        path: "/dashboard/form",
+        icon: <IoBarChartSharp />,
+    },
+    {
+        title: "Table",
+        path: "/dashboard/table",
+        icon: <IoBarChartSharp />,
+    },
+    {
+        title: "Settings",
+        path: "/dashboard/settings",
+        icon: <IoMdSettings />,
         cName: "nav-text",
     },
     {
@@ -21,17 +49,22 @@ export const SidebarData = [
         icon: <CgProfile />,
         cName: "nav-text",
     },
-    {
-        title: "Tickets",
-        path: "/dashboard/tickets",
-        icon: <TiTicket/>,
-        cName: "nav-text",
-    },
+
     {
         title: "Blogs",
         path: "/blogs",
         icon: <FaBlogger />,
-        cName: "nav-text",
+        isDropdown: true,
+        subItems: [
+            {
+                title: "Post",
+                icon: <VscDebugBreakpointDataUnverified />,
+            },
+            {
+                title: "Details",
+                icon: <VscDebugBreakpointDataUnverified />,
+            },
+        ]
     },
     {
         title: "Contacts",
@@ -50,8 +83,19 @@ export const SidebarData = [
         path: "/users",
         icon: <FaUsers />,
         cName: "nav-text",
+        isDropdown: true,
+        subItems: [
+            {
+                title: "Profile",
+                icon: <FaUsers />,
+            },
+            {
+                title: "Follower",
+                icon: <FaUsers />,
+            },
+        ]
     },
- 
+
     {
         title: "Email",
         path: "/email",
@@ -70,12 +114,7 @@ export const SidebarData = [
         icon: <MdWidgets />,
         cName: "nav-text",
     },
-    {
-        title: "Chat",
-        path: "/dashboard/chat",
-        icon: <HiOutlineCurrencyDollar />,
-        cName: "nav-text",
-    },
+
     {
         title: "Pricing",
         path: "/dashboard/pricing",
@@ -88,31 +127,18 @@ export const SidebarData = [
         icon: <IoBarChartSharp />,
         cName: "nav-text",
     },
-    {
-        title: "Form",
-        path: "/dashboard/form",
-        icon: <IoBarChartSharp />,
-    },
-    {
-        title: "table",
-        path: "/dashboard/table",
-        icon: <IoBarChartSharp />,
-    },
+
+
     {
         title: "Notifications",
         path: "/notifications",
         icon: <IoMdNotifications />,
         cName: "nav-text",
     },
-    {
-        title: "Settings",
-        path: "/settings",
-        icon: <IoMdSettings />,
-        cName: "nav-text",
-    },
+
     {
         title: "Logout",
-        path: "/logout",
+        path: "/",
         icon: <MdOutlineLogout />,
         cName: "nav-text",
     }
